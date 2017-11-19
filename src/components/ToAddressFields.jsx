@@ -8,47 +8,65 @@ class ToAddressFields extends Component {
         <div>
           <label htmlFor="">Company</label>
             <input type="text"
-              name="to_company" />
+                   name="company"
+                   value={this.props.toAddress.company}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">Name</label>
             <input type="text"
-              name="to_name" />
+                   name="name"
+                   value={this.props.toAddress.name}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">Street 1</label>
             <input type="text"
-              name="to_street1" />
+                   name="street1"
+                   value={this.props.toAddress.street1}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">Street 2</label>
             <input type="text"
-              name="to_street2" />
+                   name="street2"
+                   value={this.props.toAddress.street2}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">City</label>
             <input type="text"
-              name="to_city" />
+                   name="city"
+                   value={this.props.toAddress.city}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">State</label>
             <input type="text"
-              name="to_state" />
+                   name="state"
+                   value={this.props.toAddress.state}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">Zip</label>
             <input type="text"
-              name="to_zip" />
+                   name="zip"
+                   value={this.props.toAddress.zip}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">Phone</label>
             <input type="text"
-              name="to_phone" />
+                   name="phone"
+                   value={this.props.toAddress.phone}
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">Email</label>
             <input type="text"
-              name="to_email" />
+                   name="email"
+                   value={this.props.toAddress.email}
+                   onChange={this.props.handleInputChange} />
         </div>
         <button>Next</button>
       </div>
