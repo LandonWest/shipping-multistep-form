@@ -37,7 +37,7 @@ class ParcelFields extends Component {
                  value={this.props.parcel.weight}
                  onChange={this.props.handleInputChange} />
         </div>
-        <button>Next</button>
+        <button onClick={this.props.previousStep}>Previous</button>
       </div>
     );
   }

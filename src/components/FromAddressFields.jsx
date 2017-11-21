@@ -77,7 +77,8 @@ class FromAddressFields extends Component {
                  value={this.props.fromAddress.email}
                  onChange={this.props.handleInputChange} />
         </div>
-        <button>Next</button>
+        <button onClick={this.props.previousStep}>Previous</button>
+        <button onClick={this.props.nextStep}>Next</button>
       </div>
     );
   }

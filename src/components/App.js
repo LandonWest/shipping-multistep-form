@@ -9,6 +9,7 @@ class App extends Component {
     super();
 
     this.state = {
+      step: 1,
       toAddress: {
         company: '',
         name: '',
@@ -40,6 +41,8 @@ class App extends Component {
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.nextStep = this.nextStep.bind(this);
+    this.previousStep = this.previousStep.bind(this);
   }
 
   handleInputChange(e) {
@@ -67,17 +70,39 @@ class App extends Component {
     map[parent]();
   }
 
+  nextStep() {
+    let current = this.state.step;
+    this.setState({ step: ++current });
+    console.log("moving to step: " + this.state.step);
+  }
+
+  previousStep() {
+    let current = this.state.step;
+    this.setState({ step: --current });
+    console.log("moving to step: " + this.state.step);
+  }
+
   render() {
-    return (
-      <div>
-      <ToAddressFields toAddress={this.state.toAddress}
-                       handleInputChange={this.handleInputChange}/>
-      <FromAddressFields fromAddress={this.state.fromAddress}
-                       handleInputChange={this.handleInputChange}/>
-      <ParcelFields parcel={this.state.parcel}
-                    handleInputChange={this.handleInputChange}/>
-      </div>
-    );
+    if (this.state.step === 1) {
+      return (
+        <ToAddressFields toAddress={this.state.toAddress}
+                         handleInputChange={this.handleInputChange}
+                         nextStep={this.nextStep} />
+      );
+    } else if (this.state.step === 2) {
+      return (
+        <FromAddressFields fromAddress={this.state.fromAddress}
+                           handleInputChange={this.handleInputChange}
+                           previousStep={this.previousStep}
+                           nextStep={this.nextStep} />
+      );
+    } else {
+      return (
+        <ParcelFields parcel={this.state.parcel}
+                      handleInputChange={this.handleInputChange}
+                      previousStep={this.previousStep} />
+      );
+    }
   }
 }
 
