@@ -31,11 +31,11 @@ class FromAddressFields extends Component {
         </div>
         <div>
           <label htmlFor="">Street 2</label>
-            [<input type="text"
+            <input type="text"
                  className="jsFromAddress"
                    name="street2"
                    value={this.props.fromAddress.street2}
-                   onChange={this.props.handleInputChange} />]
+                   onChange={this.props.handleInputChange} />
         </div>
         <div>
           <label htmlFor="">City</label>

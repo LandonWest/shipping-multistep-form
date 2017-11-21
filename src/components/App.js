@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import ToAddressFields from './ToAddressFields';
 import FromAddressFields from './FromAddressFields';
+import ParcelFields from './ParcelFields';
 
 class App extends Component {
   constructor() {
@@ -29,6 +30,12 @@ class App extends Component {
         zip: '',
         phone: '',
         email: '',
+      },
+      parcel: {
+        length: '',
+        width: '',
+        height: '',
+        weight: '',
       }
     }
 
@@ -50,6 +57,11 @@ class App extends Component {
         fromAddress[name] = e.target.value
         this.setState({fromAddress});
       },
+      jsParcel: () => {
+        const parcel = {...this.state.parcel};
+        parcel[name] = e.target.value;
+        this.setState({parcel});
+      }
     }
 
     map[parent]();
@@ -62,6 +74,8 @@ class App extends Component {
                        handleInputChange={this.handleInputChange}/>
       <FromAddressFields fromAddress={this.state.fromAddress}
                        handleInputChange={this.handleInputChange}/>
+      <ParcelFields parcel={this.state.parcel}
+                    handleInputChange={this.handleInputChange}/>
       </div>
     );
   }
