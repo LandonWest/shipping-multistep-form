@@ -3,6 +3,7 @@ import '../App.css';
 import ToAddressFields from './ToAddressFields';
 import FromAddressFields from './FromAddressFields';
 import ParcelFields from './ParcelFields';
+import ShipmentInfo from './ShipmentInfo';
 
 class App extends Component {
   constructor() {
@@ -22,15 +23,15 @@ class App extends Component {
         email: '',
       },
       fromAddress: {
-        company: '',
-        name: '',
-        street1: '',
-        street2: '',
-        city: '',
-        state: '',
-        zip: '',
+        company: 'Easy Post',
+        name: 'Swag Department',
+        street1: '417 Montgomery',
+        street2: 'Floor 5',
+        city: 'San Francisco',
+        state: 'CA',
+        zip: '94101',
         phone: '',
-        email: '',
+        email: 'support@easypost.com',
       },
       parcel: {
         length: '',
@@ -96,10 +97,18 @@ class App extends Component {
                            previousStep={this.previousStep}
                            nextStep={this.nextStep} />
       );
-    } else {
+    } else if (this.state.step === 3) {
       return (
         <ParcelFields parcel={this.state.parcel}
                       handleInputChange={this.handleInputChange}
+                      previousStep={this.previousStep}
+                      nextStep={this.nextStep} />
+      );
+    } else {
+      return (
+        <ShipmentInfo toAddress={this.state.toAddress}
+                      fromAddress={this.state.fromAddress}
+                      parcel={this.state.parcel}
                       previousStep={this.previousStep} />
       );
     }
