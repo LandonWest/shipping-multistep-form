@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class ShipmentInfo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.getRates = this.getRates.bind(this);
+  }
+
+  getRates() {
+    alert('Getting Rates!');
+  }
+
   render() {
     const to = this.props.toAddress;
     const from = this.props.fromAddress;
@@ -17,7 +27,9 @@ class ShipmentInfo extends Component {
             {to.street1}<br/>
             {to.street2}<br/>
             {to.city}, {to.state}<br/>
-            {to.zip}
+            {to.zip}<br/>
+            {to.phone}<br/>
+            {to.email}<br/>
           </p>
         </div>
         <div>
@@ -28,7 +40,9 @@ class ShipmentInfo extends Component {
             {from.street1}<br/>
             {from.street2}<br/>
             {from.city}, {from.state}<br/>
-            {from.zip}
+            {from.zip}<br/>
+            {from.phone}<br/>
+            {from.email}<br/>
           </p>
         </div>
         <div>
@@ -41,7 +55,7 @@ class ShipmentInfo extends Component {
           </p>
         </div>
         <button onClick={this.props.previousStep}>Previous</button>
-        <button>Get Rates</button>
+        <button onClick={this.getRates}>Get Rates</button>
       </div>
     );
   }
