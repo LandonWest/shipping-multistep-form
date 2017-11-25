@@ -6,6 +6,15 @@ class FromAddressFields extends Component {
       <div>
         <h2>From Address</h2>
         <div>
+          <label htmlFor="">Use Default Address?</label>
+          <input type="checkbox"
+                 className="jsFromAddress"
+                 name="defaultAddress"
+                 value="default address"
+                 checked={this.props.defaultOrigin}
+                 onChange={this.props.setDefaultAddress} />
+        </div>
+        <div>
           <label htmlFor="">Company</label>
           <input type="text"
                  className="jsFromAddress"

@@ -3,12 +3,11 @@ import React, { Component } from 'react';
 class ShipmentInfo extends Component {
   constructor(props) {
     super(props);
-
     this.getRates = this.getRates.bind(this);
   }
 
   getRates() {
-    alert('Getting Rates!');
+    alert('getting rates.....');
   }
 
   render() {
