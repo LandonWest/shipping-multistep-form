@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
 class ShipmentInfo extends Component {
+  constructor(props) {
+    super(props);
+    this.getRates = this.getRates.bind(this);
+  }
+
+  getRates() {
+    alert('getting rates.....');
+  }
+
   render() {
     const to = this.props.toAddress;
     const from = this.props.fromAddress;
@@ -41,7 +50,7 @@ class ShipmentInfo extends Component {
           </p>
         </div>
         <button onClick={this.props.previousStep}>Previous</button>
-        <button>Get Rates</button>
+        <button onClick={this.getRates}>Get Rates</button>
       </div>
     );
   }
